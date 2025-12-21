@@ -1,20 +1,22 @@
 numeros = [10, 20, 30, 40, 50]
 
-# Mostrar número especifíco
+# Mostrar número específico
 print(numeros[2])
 
-#For de 1 a 10
-for numeros in range(1,11):
-    print(numeros)
+# For de 1 a 10
+for numero in range(1, 11):
+    print(numero)
 
-#while de 1 a 20
-while numeros >=30:
-    print(numeros)
+# While de 1 a 20
+contador = 1
+while contador <= 20:
+    print(contador)
+    contador += 1
 
-#For com um if embutido ao meio em pares
-for pares in numeros:
-    if numeros % 2==0:
-        print(pares)
+# Mostrar números pares da lista
+for numero in numeros:
+    if numero % 2 == 0:
+        print("Par:", numero)
 
 # Mostrar todos
 for numero in numeros:
@@ -31,4 +33,3 @@ for numero in numeros:
     total += numero
 
 print("Soma total:", total)
-
