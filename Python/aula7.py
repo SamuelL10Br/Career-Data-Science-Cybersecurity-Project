@@ -35,3 +35,23 @@ with open("dados.csv","w", encoding="utf-8") as arquivo:
 with open("dados.csv","r",encoding="utf-8") as arquivo:
     for linha in arquivo:
         print(linha.strip())
+# Uma forma mais profissional para escrever dados 'csv'
+import csv
+
+with open("dados.csv", "w",newline="", encoding="utf-8") as arquivo:
+    escritor = csv.writer(arquivo)
+
+    escritor.writerow(["nome, idade, salário, profissão"])
+    escritor.writerow(["Samuel",22,25000,"Especialista de Dados"])
+    escritor.writerow(["Ana",28,12000,"Analista de Dados"])
+    escritor.writerow(["Júlia",35,30000,"CEO"])
+    escritor.writerow(["Júnior",43,15000,"Desenvolvedor Mobile"])
+
+# Lendo em forma de lista
+
+import csv
+
+with open("dados.csv", "r", encoding="utf-8") as arquivo:
+    conteudo = list(csv.DictReader(arquivo))
+
+print(conteudo)
