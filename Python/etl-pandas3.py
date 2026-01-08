@@ -31,3 +31,23 @@ print(df)
 df.to_csv("dados_limpos.csv", index=False)
 
 print("\nArquivo 'dados_limpos.csv' gerado com sucesso.")
+
+# Atividade prática de ETL, filtrando dados e criando coluna.
+import pandas as pd
+
+dados = {
+    "nome": ["Samuel","Ana","Tiago"],
+    "idade": [22, 39, 45],
+    "salario": [25000, 3400, 4567]
+}
+
+df = pd.DataFrame(dados)
+df["salario_anual"] = df["salario"] * 12
+print("\nAdicionando uma coluna para salário anual")
+print(df)
+
+df = df[df["idade"] >= 21]
+df.to_csv("dados_finais.csv", index=False)
+print("\nDados gerados com sucesso!")
+
+
