@@ -66,3 +66,20 @@ print(df)
 # Load 
 df.to_csv("Dados_analise.csv", index=False)
 print("\nArquivo 'dados_analise.csv' gerado com sucesso.")
+
+# Média salarial por idade
+import pandas as pd
+df = pd.read_csv("dados_analise.csv")
+
+# Transform - Agrupamento
+media_salario = df.groupby("idade")["salario"].mean()
+
+print("\nMédia de salário por idade:")
+print(media_salario)
+
+# Convertendo para DataFrame
+resultado = media_salario.reset_index()
+
+# Load
+resultado.to_csv("media_salario_por_idade.csv", index=False)
+print("\nArquivo 'media_salario_por_idade.csv' gerado com sucesso.")
