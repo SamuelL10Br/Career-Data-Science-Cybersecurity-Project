@@ -83,3 +83,35 @@ resultado = media_salario.reset_index()
 # Load
 resultado.to_csv("media_salario_por_idade.csv", index=False)
 print("\nArquivo 'media_salario_por_idade.csv' gerado com sucesso.")
+
+# Join in pandas
+import pandas as pd
+
+# Tabela de pessoas
+pessoas = {
+    "id": [1, 2, 3],
+    "nome": ["Samuel", "Ana", "Tiago"]
+}
+
+# Tabela de salários
+salarios = {
+    "id_pessoa": [1, 2, 3],
+    "salario": [25000, 3400, 4567]
+}
+
+df_pessoas = pd.DataFrame(pessoas)
+df_salarios = pd.DataFrame(salarios)
+
+# JOIN (equivalente ao SQL JOIN)
+df_join = pd.merge(
+    df_pessoas,
+    df_salarios,
+    left_on="id",
+    right_on="id_pessoa",
+    how="inner"
+)
+
+print("\nResultado do JOIN:")
+print(df_join)
+
+
